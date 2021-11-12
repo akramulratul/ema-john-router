@@ -1,11 +1,23 @@
-import React from 'react';
+import React from "react";
+import useCart from "../../hooks/useCart";
+import useProducts from "../../hooks/useProducts";
+import Cart from "../Cart/Cart";
 
 const OrderReview = () => {
-    return (
-        <div>
-            <h2>This is Order Review</h2>
-        </div>
-    );
+  const [products, setProducts] = useProducts();
+  const [cart] = useCart(products);
+  return (
+    <div className="shop-container">
+      <div className="product-container">
+          {
+              
+          }
+      </div>
+      <div className="cart-container">
+        <Cart cart={cart} />
+      </div>
+    </div>
+  );
 };
 
 export default OrderReview;
